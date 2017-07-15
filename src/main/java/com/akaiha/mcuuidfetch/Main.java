@@ -111,6 +111,11 @@ public class Main {
 				   JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setBounds(12, 150, 598, 270);
 		frmMcUuidAnd.getContentPane().add(scrollPane);
+		
+		JLabel lblNewLabel = new JLabel("Author: Akaiha");
+		lblNewLabel.setFont(new Font("Lucida Calligraphy", Font.PLAIN, 10));
+		lblNewLabel.setBounds(542, 429, 92, 16);
+		frmMcUuidAnd.getContentPane().add(lblNewLabel);
 	}
 	
 	public void fetch() {
