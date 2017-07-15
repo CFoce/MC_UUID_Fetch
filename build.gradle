@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.akaiha.mcuuidfetch.Main'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+}
+
+jar {
+  manifest {
+    attributes(
+      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+      'Main-Class': 'com.akaiha.mcuuidfetch.Main'
+    )
+  }
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
