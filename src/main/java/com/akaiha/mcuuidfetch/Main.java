@@ -23,13 +23,14 @@ import com.mojang.api.profiles.Profile;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.awt.SystemColor;
 
 public class Main {
 
 	private JFrame frmMcUuidAnd;
 	private JTextField nameField;
 	private JTextArea namesHistoryField;
-	private JLabel uuidField;
+	private JTextField uuidField;
 	DateFormat dateFormat = new SimpleDateFormat("MMM-dd-yyyy");
 	
 	public static void main(String[] args) {
@@ -92,10 +93,11 @@ public class Main {
 		uuidLabel.setBounds(12, 77, 191, 29);
 		frmMcUuidAnd.getContentPane().add(uuidLabel);
 		
-		uuidField = new JLabel("");
+		uuidField = new JTextField("");
+		uuidField.setEditable(false);
 		uuidField.setHorizontalAlignment(SwingConstants.CENTER);
 		uuidField.setForeground(Color.BLUE);
-		uuidField.setBackground(Color.WHITE);
+		uuidField.setBackground(SystemColor.control);
 		uuidField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		uuidField.setBounds(12, 108, 598, 29);
 		uuidField.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -109,13 +111,23 @@ public class Main {
 		JScrollPane scrollPane = new JScrollPane(namesHistoryField, 
 				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, 
 				   JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scrollPane.setBounds(12, 150, 598, 270);
+		scrollPane.setBounds(12, 175, 598, 245);
 		frmMcUuidAnd.getContentPane().add(scrollPane);
 		
 		JLabel lblNewLabel = new JLabel("Author: Akaiha");
 		lblNewLabel.setFont(new Font("Lucida Calligraphy", Font.PLAIN, 10));
 		lblNewLabel.setBounds(542, 429, 92, 16);
 		frmMcUuidAnd.getContentPane().add(lblNewLabel);
+		
+		JLabel lblMcNamesHistory = new JLabel(" MC Names History:");
+		lblMcNamesHistory.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblMcNamesHistory.setBounds(12, 146, 191, 29);
+		frmMcUuidAnd.getContentPane().add(lblMcNamesHistory);
+		
+		JLabel lblVer = new JLabel("Ver: 1.0");
+		lblVer.setFont(new Font("DialogInput", Font.PLAIN, 10));
+		lblVer.setBounds(2, 429, 92, 16);
+		frmMcUuidAnd.getContentPane().add(lblVer);
 	}
 	
 	public void fetch() {
