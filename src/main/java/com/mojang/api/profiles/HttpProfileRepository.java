@@ -5,6 +5,9 @@ import com.mojang.api.http.BasicHttpClient;
 import com.mojang.api.http.HttpBody;
 import com.mojang.api.http.HttpClient;
 import com.mojang.api.http.HttpHeader;
+import com.mojang.api.profiles.NameHistory;
+import com.mojang.api.profiles.Profile;
+import com.mojang.api.profiles.ProfileRepository;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
